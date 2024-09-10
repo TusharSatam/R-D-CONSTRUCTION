@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ContactBG from "../../assets/image/ContactusBG.webp";
+import { toast } from 'react-toastify';
 
 const Contact = ({ sectionRefs }) => {
   // State to manage form inputs
@@ -24,16 +25,19 @@ const Contact = ({ sectionRefs }) => {
   // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     // Simple validation
     if (formData.name && formData.email && formData.message) {
-      console.log('Form Submitted', formData);
-
-      // Set form as submitted and reset form data
-      setSubmitted(true);
+      // Construct the mailto link
+      const mailtoLink = `mailto:tsatam91@gmail.com?subject=New Contact Form Submission&body=Name: ${formData.name}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
+      
+      // Open mail client with pre-populated email fields
+      window.location.href = mailtoLink;
+  
+      // Optionally, reset form after user interaction
+      // setSubmitted(true);
+      toast.success("Thank you! Your message has been sent.")
       setFormData({ name: '', email: '', message: '' });
-
-      // You can also add additional logic like sending the data to a server here
     } else {
       alert('Please fill in all the fields.');
     }
@@ -52,11 +56,6 @@ const Contact = ({ sectionRefs }) => {
 
         {/* Contact Form */}
         <div className='lg:w-1/2 h-full z-10 w-full'>
-          {submitted ? (
-            <div className="text-green-500 font-semibold">
-              Thank you! Your message has been sent.
-            </div>
-          ) : (
             <form onSubmit={handleSubmit} className="bg-black bg-opacity-50 p-8 rounded-md space-y-4">
               <div>
                 <label htmlFor="name" className="block text-lg font-medium">Name</label>
@@ -101,7 +100,6 @@ const Contact = ({ sectionRefs }) => {
                 Submit
               </button>
             </form>
-          )}
         </div>
       </div>
     </section>
