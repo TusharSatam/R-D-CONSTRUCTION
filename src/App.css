@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .App {
   text-align: center;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .App-logo {
@@ -30,10 +32,77 @@
   color: #61dafb;
 }
 
+#contact {
+  background-image: url('./assets/image/ContactusBG.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.herBG{
+  background-image: url('./assets/image/hero.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.projectBG {
+  background-image: url('./assets/image/ProjectsBG.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.aboutBG{
+  background-image: url('./assets/image/aboutBG.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.serviceBG{
+  background-image: url('./assets/image/serviceBG.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.grayLayer{
+  background-color: #282c34a4;
+}
+.projectGradCr{
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4290966386554622) 0%, rgba(0, 0, 0, 0.6671918767507004) 19%, rgba(48, 48, 48, 1) 100%);
+}
+
+.contactGradCr {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(223, 206, 4, 0.19940476190476186) 63%, rgba(0, 212, 255, 0) 100%);
+}
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  /* background: grey; */
+  margin-bottom: 50px;
+}
+.my-masonry-grid_column:nth-child(2),.my-masonry-grid_column:nth-child(4){
+  margin-top: 50px !important;
+}
+.projectCardImg:hover{
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

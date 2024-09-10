@@ -5,15 +5,21 @@ import Projects from "../sections/Projects/Projects"
 import Services from "../sections/Services/Services"
 import Contact from "../sections/Contact/Contact"
 const Home = ({ activeSection, setActiveSection }) => {
-
+//Todo: add footer and project 
 
     const sectionRefs = {
         hero: useRef(null),
-        services: useRef(null),
         about: useRef(null),
+        services: useRef(null),
         projects: useRef(null),
         contact: useRef(null),
     };
+
+useEffect(() => {
+console.log('====================================');
+console.log(sectionRefs);
+console.log('====================================');
+}, [sectionRefs])
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -24,7 +30,7 @@ const Home = ({ activeSection, setActiveSection }) => {
                     }
                 });
             },
-            { threshold: 0.7 }
+            { threshold: 0.1 }
         );
 
         Object.values(sectionRefs).forEach((ref) => {

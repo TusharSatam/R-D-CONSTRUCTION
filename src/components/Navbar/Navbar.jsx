@@ -24,7 +24,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         >
             <div className="max-w-7xl mx-auto flex  flex-wrap justify-between items-center py-4 px-6 w-full h-full">
                 {/* Logo */}
-                <div className="text-white text-xl font-bold text-left">RD CONSTRUCTION</div>
+                <a href='/' className="text-white text-xl font-bold text-left">RD CONSTRUCTION</a>
 
                 {/* Nav Links */}
                 <div className="flex gap-x-3  md:space-x-6 text-white flex-wrap">

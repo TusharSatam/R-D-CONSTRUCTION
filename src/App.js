@@ -6,13 +6,14 @@ import Home from './screens/Home';
 import PrivacyPolicy from './screens/PrivacyPolicy';
 import TermsAndConditions from './screens/TermsAndConditions';
 import { useState } from 'react';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [activeSection, setActiveSection] = useState('');
 
   return (
     <Router>
-      <div className="App max-w-[1200px] bg-[#FFFFFF] min-h-screen transition-all duration-300 mx-auto">
+      <div className="App  min-h-screen transition-all duration-300 mx-auto !contactGradCr">
         <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
 
         {/* Define Routes */}
@@ -24,6 +25,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
